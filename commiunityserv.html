@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Service - Rotaract Club of ICBT</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS Animations -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #b80860;
+      --accent-color: #f2b009;
+      --dark-bg: #222;
+      --light-bg: #f9f9f9;
+      --text-dark: #333;
+      --text-light: #fff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.8;
+      scroll-behavior: smooth;
+      background-color: var(--light-bg);
+    }
+
+    .navbar {
+      background-color: var(--primary-color);
+      font-size: 15px;
+      font-weight: bold;
+      padding-right: 10px;
+    }
+
+    .navbar .navbar-brand img {
+      height: 50px;
+      width: auto;
+    }
+
+    .navbar-brand, .nav-link {
+      color: var(--text-light) !important;
+      text-align: center;
+    }
+
+    .nav-link:hover {
+      color:black!important;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: var(--text-dark) !important;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+      color: var(--accent-color) !important;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, #d8f3dc, #b7e4c7), url('assets/clubservice-bg.jpg') center/cover no-repeat;
+      color: var(--text-light);
+      text-align: center;
+      padding: 200px 20px;
+      height: 400px;
+    }
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .hero-section p {
+      font-size: 1.3rem;
+      color: #f1f1f1;
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-top: 70px;
+      margin-bottom: 40px;
+    }
+
+    /* Cards */
+    .service-card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .service-card img {
+      height: 220px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .service-card .card-body {
+      background: #fff;
+      padding: 25px;
+    }
+    .service-card h5 {
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .btn-custom {
+      background-color: var(--primary-color);
+      color: #fff;
+      border-radius: 30px;
+      padding: 8px 20px;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+    .btn-custom:hover {
+      background-color: var(--accent-color);
+      color: #000;
+    }
+
+    /* Objectives Section */
+    .objectives {
+      background: var(#f1f1f1);
+      color: #fff;
+      padding: 70px 20px;
+      text-align: center;
+    }
+    .objectives h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+    .objectives p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+  /* Footer */
+    .footer {
+      background-color: #0d1321;
+      color: #ccc;
+      padding: 50px 10px 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer .container {
+      width: 90%;
+      margin: auto;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-about {
+      flex: 1.8;
+      min-width: 250px;
+      line-height: 1.6;
+    }
+
+    .footer-links,
+    .footer-contact,
+    .footer-social {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer h4 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li {
+      margin: 6px 0;
+    }
+
+    .footer-links ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-contact p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .footer-contact i {
+      color: #b70653;
+      margin-right: 8px;
+    }
+
+    .footer-social .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      color: #fff;
+      background-color: #1d3557;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .footer-social .social-icons a:hover {
+      background-color: #b70653;
+      transform: translateY(-3px);
+    }
+
+    .footer hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 30px 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="assets/logo.jpg" alt="Rotaract Logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">RacFam</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="racfam.html">Executive Committee</a></li>
+              <li><a class="dropdown-item" href="racfam2.html">Board Of Directors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">What We Do</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="history.html">History</a></li>
+              <li><a class="dropdown-item" href="about.html">About</a></li>
+              <li><a class="dropdown-item" href="formality.html">Formality</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Avenues</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="clubservice.html">Club Service</a></li>
+              <li><a class="dropdown-item" href="commiunityserv.html">Community Service</a></li>
+              <li><a class="dropdown-item" href="internationalser.html">International Service</a></li>
+              <li><a class="dropdown-item" href="profetionald.html">Professional Development</a></li>
+              <li><a class="dropdown-item" href="pr.html">Public Relations</a></li>
+              <li><a class="dropdown-item" href="sportsrecreation.html">Sports and Recreation</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="awards.html">Awards</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" data-aos="zoom-in" data-aos-duration="1200">
+    <div class="container">
+      <h1>Community Service Avenue</h1>
+      <p>“The best way to find yourself is to lose yourself in the service of others.” – Mahatma Gandhi</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="container py-5" data-aos="fade-up" data-aos-duration="1200">
+    <h2 class="section-title">What is Community Service?</h2>
+    <p class="text-center mx-auto" style="max-width: 800px;">
+      Community Service Avenue focuses on creating a positive impact on society through humanitarian service and addressing local community needs.It’s the avenue where Rotaractors contribute to improving living standards, supporting underprivileged groups and promoting social responsibility.
+    </p>
+  </section>
+
+  <!-- Activities Section -->
+  <section class="container py-5">
+    <h2 class="section-title">Key Activities</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="flip-left">
+        <div class="card service-card">
+          <img src="assets/team-bond.jpg" alt="Team Bonding">
+          <div class="card-body">
+            <h5>Charity Programs</h5>
+            <p>Providing food, clothes and school supplies to the needy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="flip-up">
+        <div class="card service-card">
+          <img src="assets/meetings.jpg" alt="Club Meetings">
+          <div class="card-body">
+            <h5>Health Campaigns</h5>
+            <p>Organizing blood donation camps and medical check-ups for the community.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="flip-right">
+        <div class="card service-card">
+          <img src="assets/fellowship.jpg" alt="Fellowship Events">
+          <div class="card-body">
+            <h5>Environmental Projects</h5>
+            <p>Organizing tree planting drives, clean-up campaigns and awareness programs for a sustainable future.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="container py-5">
+    <h2 class="section-title">Community Service Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="card service-card">
+          <img src="assets/project1.jpg" alt="Orientation Day">
+          <div class="card-body">
+            <h5>Feed a Family</h5>
+            <p>Providing food, clothes and school supplies to the needy.</p>
+            <a href="blog.html#orientation" class="btn btn-custom">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card service-card">
+          <img src="assets/project2.jpg" alt="RotaFest">
+          <div class="card-body">
+            <h5>Green Earth Project</h5>
+            <p>Organizing tree planting drives, clean-up campaigns and awareness programs for a sustainable future.</p>
+            <a href="blog.html#rotafest" class="btn btn-custom">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card service-card">
+          <img src="assets/project3.jpg" alt="Leadership Retreat">
+          <div class="card-body">
+            <h5>Health for All</h5>
+            <p>A medical camp offering free check-ups and health education.</p>
+            <a href="blog.html#leadership" class="btn btn-custom">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objectives Section -->
+  <section class="objectives" data-aos="fade-in">
+    <h2>Objectives of Community Service</h2>
+    <p>
+     Community Service seeks to make a positive impact on society by addressing local needs and supporting underprivileged groups. Its objectives include promoting social welfare, empowering communities and raising awareness about social issues through meaningful volunteer activities.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h4>Rotaract Club of ICBT</h4>
+          <h5>
+            RID 3220 | Sri Lanka & Maldives
+            <img src="https://flagcdn.com/w20/lk.png" alt="Sri Lanka Flag" width="20" height="15">
+            <img src="https://flagcdn.com/w20/mv.png" alt="Maldives Flag" width="20" height="15">
+          </h5>
+          <p>Empowering youth through leadership, community service and fellowship to create a lasting positive impact locally and globally.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="history.html">Our History</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-envelope"></i> icbtrotaract@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +94 740860054</p>
+          <p><i class="fas fa-map-marker-alt"></i> ICBT Campus, Colombo, Sri Lanka</p>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/rotaracticbt" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/rotaracticbt/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/rotaract-icbt" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@rotaractcluboficbt5506" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="footer-bottom">
+        © 2025 Rotaract Club of ICBT | All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 75;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 75;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 100; // smaller is faster
+
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 30);
+          } else {
+            counter.innerText = target + '+';
+          }
+        };
+        updateCount();
+      });
+    };
+
+    // Parallax Background Scroll Effect
+    window.addEventListener('scroll', function() {
+      const stats = document.querySelector('.stats-section');
+      if (stats) {
+        let offset = window.pageYOffset;
+        stats.style.backgroundPositionY = offset * 0.5 + 'px';
+      }
+    });
+
+    // Trigger animation on scroll using IntersectionObserver
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.disconnect();
+        }
+      });
+    });
+
+    const statsElement = document.querySelector('#stats');
+    if (statsElement) observer.observe(statsElement);
+
+    // Google Translate
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,si,ta',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+</body>
+</html>

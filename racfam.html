@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Committee - Rotaract Club of ICBT</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #a90054;
+      --accent-color: #f2b009;
+      --dark-bg: #222;
+      --light-bg: #f9f9f9;
+      --text-dark: #333;
+      --text-light: #fff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 2;
+      padding-top: 0px;
+    }
+
+    .navbar {
+      background-color: var(--primary-color);
+      font-size: 15px;
+      font-weight: bold;
+      padding-right: 10px;
+    }
+
+    .navbar .navbar-brand img {
+      height: 50px;
+      width: auto;
+    }
+
+    .navbar-brand, .nav-link {
+      color: var(--text-light) !important;
+      text-align: center;
+    }
+
+    .nav-link:hover {
+      color:black!important;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: var(--text-dark) !important;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+      color: var(--accent-color) !important;
+    }
+
+    .committee-member {
+      transition: transform 0.3s;
+    }
+    .committee-member:hover {
+      transform: translateY(-5px);
+    }
+    .member-img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20%;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .footer {
+      background-color: #0d1321;
+      color: #ccc;
+      padding: 50px 10px 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer .container {
+      width: 90%;
+      margin: auto;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-about {
+      flex: 1.8;
+      min-width: 250px;
+      line-height: 1.6;
+    }
+
+    .footer-links,
+    .footer-contact,
+    .footer-social {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer h4 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li {
+      margin: 6px 0;
+    }
+
+    .footer-links ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-contact p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .footer-contact i {
+      color: #b70653;
+      margin-right: 8px;
+    }
+
+    .footer-social .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      color: #fff;
+      background-color: #1d3557;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .footer-social .social-icons a:hover {
+      background-color: #b70653;
+      transform: translateY(-3px);
+    }
+
+    .footer hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 30px 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="assets/logo.jpg" alt="Rotaract Logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">RacFam</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="racfam.html">Executive Committee</a></li>
+              <li><a class="dropdown-item" href="racfam2.html">Board Of Directors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">What We Do</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="history.html">History</a></li>
+              <li><a class="dropdown-item" href="about.html">About</a></li>
+              <li><a class="dropdown-item" href="formality.html">Formality</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Avenues</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="clubservice.html">Club Service</a></li>
+              <li><a class="dropdown-item" href="commiunityserv.html">Community Service</a></li>
+              <li><a class="dropdown-item" href="internationalser.html">International Service</a></li>
+              <li><a class="dropdown-item" href="profetionald.html">Professional Development</a></li>
+              <li><a class="dropdown-item" href="pr.html">Public Relations</a></li>
+              <li><a class="dropdown-item" href="sportsrecreation.html">Sports and Recreation</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="awards.html">Awards</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-light text-dark text-center py-2">
+    <p>Connect with Our Executive Committee..</p>
+  </header>
+
+  <!-- Executive Committee Section -->
+  <section id="executive-committee" class="container py-5">
+    <h2 class="section-title text-center">Executive Committee 2025/2026</h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Member 1 -->
+      <div class="col-sm-6 col-md-6 col-lg-6 text-center committee-member">
+        <img src="assets/team/IMG-20251005-WA0035.jpg" alt="President" class="member-img">
+        <h5>Rtr. Dinya Himasari</h5>
+        <p>President</p>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="col-sm-6 col-md-6 col-lg-6 text-center committee-member">
+        <img src="assets/team/IMG-20251005-WA0038.jpg" alt="Vice President" class="member-img">
+        <h5>Rtr. Priyanga Neelamegan</h5>
+        <p>Vice President</p>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="col-sm-6 col-md-6 col-lg-6 text-center committee-member">
+        <img src="assets/team/IMG-20251005-WA0027.jpg" alt="Secretary" class="member-img">
+        <h5>Rtr. Eveen Abraham</h5>
+        <p>Secretary</p>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="col-sm-6 col-md-6 col-lg-6 text-center committee-member">
+        <img src="assets/team/IMG-20251005-WA0045.jpg" alt="Treasurer" class="member-img">
+        <h5>Rtr. Saad Ameer</h5>
+        <p>Secretary</p>
+      </div>
+
+      <!-- Member 5 -->
+      <div class="col-sm-6 col-md-6 col-lg-6 text-center committee-member">
+        <img src="assets/team/WhatsApp Image 2025-09-17 at 17.02.07_7ada8f35.jpg" alt="Member 5" class="member-img">
+        <h5>Rtr. Hiyumi Silva</h5>
+        <p>Treasurer</p>
+      </div>
+
+      <!-- Member 6 -->
+      <div class="col-sm-6 col-md-6 col-lg-6 text-center committee-member">
+        <img src="assets/team/WhatsApp Image 2025-10-19 at 20.04.50_69cffd22.jpg" alt="Member 6" class="member-img">
+        <h5>Rtr. Hafsah Nawaz </h5>
+        <p>Assistant Treasurer & Sergeant at Arms</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h4>Rotaract Club of ICBT</h4>
+          <h5>
+            RID 3220 | Sri Lanka & Maldives
+            <img src="https://flagcdn.com/w20/lk.png" alt="Sri Lanka Flag" width="20" height="15">
+            <img src="https://flagcdn.com/w20/mv.png" alt="Maldives Flag" width="20" height="15">
+          </h5>
+          <p>Empowering youth through leadership, community service and fellowship to create a lasting positive impact locally and globally.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="history.html">Our History</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-envelope"></i> icbtrotaract@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +94 740860054</p>
+          <p><i class="fas fa-map-marker-alt"></i> ICBT Campus, Colombo, Sri Lanka</p>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/rotaracticbt" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/rotaracticbt/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/rotaract-icbt" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@rotaractcluboficbt5506" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="footer-bottom">
+        © 2025 Rotaract Club of ICBT | All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 75;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 100; // smaller is faster
+
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 30);
+          } else {
+            counter.innerText = target + '+';
+          }
+        };
+        updateCount();
+      });
+    };
+
+    // Parallax Background Scroll Effect
+    window.addEventListener('scroll', function() {
+      const stats = document.querySelector('.stats-section');
+      if (stats) {
+        let offset = window.pageYOffset;
+        stats.style.backgroundPositionY = offset * 0.5 + 'px';
+      }
+    });
+
+    // Trigger animation on scroll using IntersectionObserver
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.disconnect();
+        }
+      });
+    });
+
+    const statsElement = document.querySelector('#stats');
+    if (statsElement) observer.observe(statsElement);
+
+    // Google Translate
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,si,ta',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
