@@ -100,6 +100,20 @@
       margin-bottom: 0;
     }
 
+  header.hero .btn-warning {
+  background-color: #e2e2f1;
+  border: none;
+  color: #530020;
+  transition: all 0.3s ease;
+  padding: 12px 28px;
+  border-radius: 50px;
+}
+
+header.hero .btn-warning:hover {
+  background-color: #fff;
+  color: #b80860;
+  transform: scale(1.05);
+}
     .section-title {
       text-align: center;
       margin: 60px 0 30px;
@@ -274,6 +288,64 @@
   color: #999;
 }
 
+/* Flip Card Styles */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 550px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.flip-card-front a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.flip-card-back {
+  background: #fff;
+  color: #333;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  text-align: center;
+}
+
+.flip-card-back::-webkit-scrollbar {
+  width: 4px;
+}
+.flip-card-back::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+
 /* Hide Google logo and unnecessary elements */
 .goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame.skiptranslate {
   display: none !important;
@@ -354,6 +426,7 @@ body { top: 0 !important; }
   <div class="container text-center">
     <h1>Rotaract Club of ICBT</h1>
     <p class="lead">"Fellowship Through Service"</p>
+    <a href="#donate" class="btn btn-warning btn-lg fw-bold shadow mt-3">Join Our Ongoing Projects</a>
   </div>
 </header>
 
@@ -669,6 +742,109 @@ body { top: 0 !important; }
 <!-- Quote / Donation Section -->
 <section id="donate" class="text-center py-5" style="background: linear-gradient(135deg, #b80860, #530020); color: #fff;" data-aos="fade-up">
   <div class="container">
+
+  <div class="container mb-5" data-aos="fade-up">
+  <h2 class="text-center mb-4 fw-bold">Ongoing & Upcoming Projects</h2>
+
+  <div class="row g-4 justify-content-center">
+
+    <!-- Project 1 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- Front side -->
+          <div class="flip-card-front">
+            <a href="https://forms.gle/ZrvhAjshtAapxK16A" target="_blank" rel="noopener noreferrer">
+              <img src="assets/up_projects/freakyfriday.jpg" alt="Ongoing Project" class="img-fluid">
+            </a>
+          </div>
+
+          <!-- Back side -->
+          <div class="flip-card-back d-flex flex-column justify-content-center align-items-center p-3">
+            <h6 class="fw-bold mb-2 text-center">Freaky Friday 3.0 rises to haunt your night. 💀</h6>
+            <p class="small text-muted text-center">
+              The ritual begins. The wait is over.
+              Freaky Friday 3.0 rises to haunt your night. 💀
+              Step into the darkness - if you dare.👣<br><br>
+              <strong>Freaky Friday 3.0</strong><br><br>
+              🗓 Date: 28th November 2025 <br>
+              🕔 Time: 6:00 PM onwards <br>
+              📍 Venue: ICBT Auditorium 🎬 <br><br>
+              Freaky Friday 3.0 E-tickets are finally OUT!🔥 Scan the QR or click the link — the gates to chaos await. 👻<br>
+              <a href="https://forms.gle/ZrvhAjshtAapxK16A" target="_blank" rel="noopener noreferrer">https://forms.gle/ZrvhAjshtAapxK16A</a><br><br>
+              #FreakyFriday3 #Rotaract #RID3220 #UniteForGood #RACICBT #EmpoweringChange #InspiringLeaders
+            </p>
+            <span class="badge bg-success">Ongoing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- Front side -->
+          <div class="flip-card-front">
+            <a href="https://tinyurl.com/WhatJhumka25" target="_blank" rel="noopener noreferrer">
+              <img src="assets/up_projects/whatjhumka.jpg" alt="Ongoing Project" class="img-fluid">
+            </a>
+          </div>
+
+          <!-- Back side -->
+          <div class="flip-card-back d-flex flex-column justify-content-center align-items-center p-3">
+            <h6 class="fw-bold mb-2 text-center">The wait is over! Save the date and bring your moves! 💃✨</h6>
+            <p class="small text-muted text-center">
+              The most awaited Bollywood night of the year is back!! <br><br>
+              <strong>What Jhumka 2025 💫</strong><br><br>
+              🗓 Date: 5th December <br>
+              🕔 Time: 6:00 PM onwards <br>
+              📍 Venue: DHPL Lounge 42 🎬 <br><br>
+              💃 “Thoda drama, thoda glamour — aur poora Bollywood ka swagger!” ✨<br><br>
+             
+              #WhatJhumka25 #RACUptown #RACICBT #RACNIBM
+            </p>
+            <span class="badge bg-warning text-dark">Upcoming</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- Front side -->
+          <div class="flip-card-front">
+            <a href="https://tinyurl.com/WhatJhumka25" target="_blank" rel="noopener noreferrer">
+              <img src="assets/up_projects/wcearlyb.jpg" alt="Project" class="img-fluid">
+            </a>
+          </div>
+
+          <!-- Back side -->
+          <div class="flip-card-back d-flex flex-column justify-content-center align-items-center p-3">
+            <h6 class="fw-bold mb-2 text-center">The spotlight’s on YOU! 🌟</h6>
+            <p class="small text-muted text-center">
+              Registrations for What Jhumka 2025 are officially OPEN! 💫<br>
+              Get ready for a night full of thumkas, drama, and pure Bollywood magic! 🪩<br>
+              🎟 Grab your glam, call your squad! It’s showtime!<br>
+              <a href="https://tinyurl.com/WhatJhumka25" target="_blank" rel="noopener noreferrer">Register Here: https://tinyurl.com/WhatJhumka25 </a><br><br>
+              🗓 Date: 5th December <br>
+              🕔 Time: 6:00 PM onwards <br>
+              📍 Venue: DHPL Lounge 42 <br><br>
+              Lights flashing, beats dropping, and the stage set for YOU!🎬<br>
+              #WhatJhumka25 #RACUptown #RACICBT #RACNIBM
+            </p>
+            <span class="badge bg-success">Ongoing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- end row -->
+</div> <!-- end container -->
+
+  
     <h2 class="section-title mb-4" style="color: #fff;">Be the Change</h2>
     <p class="lead mb-4">
       “The best way to find yourself is to lose yourself in the service of others.”
@@ -888,5 +1064,6 @@ observer.observe(document.querySelector('#stats'));
 </body>
 
 </html>
+
 
 
