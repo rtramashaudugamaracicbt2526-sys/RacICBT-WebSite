@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pawsitive Impact - Rotaract Club of ICBT</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    body {
+      background: #000000;
+      color: #2d2d2d;
+      line-height: 1.8;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(255, 126, 95, 0.9), rgba(254, 180, 123, 0.9)),
+                  url('https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1400&q=80') center/cover;
+      color: white;
+      padding: 80px 50px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 15px;
+      max-width: 800px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 750px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #fff;
+      color: #ff6b4a;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      margin-top: 35px;
+    }
+
+    .main-content, .sidebar {
+      background: rgba(255,255,255,0.9);
+      border-radius: 25px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .main-content h2 {
+      color: #ff6b4a;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .main-content p {
+      margin-bottom: 18px;
+      text-align: justify;
+      font-size: 1rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #fff3cd, #ffe4ec);
+      border-left: 6px solid #ff6b6b;
+      padding: 20px;
+      border-radius: 18px;
+      margin: 25px 0;
+      font-size: 1rem;
+    }
+
+    .quote {
+      background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+      padding: 25px;
+      border-radius: 20px;
+      margin: 25px 0;
+      font-style: italic;
+      color: #444;
+      border-left: 6px solid #7e57c2;
+    }
+
+    .sidebar h3 {
+      color: #6a1b9a;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+
+    .info-card {
+      background: linear-gradient(135deg, #fef3f0, #eef7ff);
+      padding: 20px;
+      border-radius: 18px;
+      margin-bottom: 20px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7);
+    }
+
+    .info-card strong {
+      display: block;
+      color: #ff6b4a;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .stat-box {
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      color: #333;
+      text-align: center;
+      padding: 20px 15px;
+      border-radius: 20px;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    }
+
+    .stat-box span {
+      display: block;
+      font-size: 1.8rem;
+      color: #d84315;
+    }
+
+    .footer-banner {
+      margin-top: 35px;
+      padding: 30px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
+
+    .footer-banner h2 {
+      margin-bottom: 12px;
+      font-size: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background: white;
+      color: #6a1b9a;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ffe082;
+      color: #4a148c;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero {
+        padding: 60px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="margin-bottom: 20px;">
+      <a href="blog.html" class="btn" style="background: #ff6b4a; color: white; margin-top: 0;">&larr; Return to Blog</a>
+    </div>
+
+    <section class="hero">
+      <div class="badge">Community Service </div>
+      <h1>Pawsitive Impact: Strengthening Community Responsibility Through Humane Animal Welfare</h1>
+      <p>
+        A heartfelt initiative by the Rotaract Club of ICBT that brought compassion, care and awareness
+        to the streets of Dehiwala by supporting stray animals and promoting humane coexistence.
+      </p>
+    </section>
+
+    <section class="article-grid">
+      <div class="main-content">
+        <h2>About the Project</h2>
+        <p>
+          The <strong>Pawsitive Impact</strong> project, organized by the <strong>Rotaract Club of ICBT</strong>,
+          was successfully carried out on <strong>9th November 2025</strong> in <strong>Dehiwala</strong>.
+          This meaningful community service initiative was designed to address the pressing welfare needs of
+          street animals while also reminding society of its shared responsibility to create a kinder and
+          more humane environment for all living beings.
+        </p>
+
+        <p>
+          In many urban areas, stray dogs and cats face daily struggles such as hunger, dehydration,
+          neglect and unsafe living conditions. These issues not only affect the animals themselves,
+          but also connect with wider concerns such as public health, environmental hygiene and
+          community wellbeing. Recognizing these challenges, the project focused on direct action that
+          could create both immediate relief and long-term awareness.
+        </p>
+
+        <div class="highlight-box">
+          <strong>Main Goal:</strong> To provide food and clean drinking water to stray animals while
+          spreading awareness about responsible, ethical and compassionate animal care within the community.
+        </div>
+
+        <h2>How the Initiative Was Carried Out</h2>
+        <p>
+          A dedicated team of <strong>seven Rotaractors</strong> actively participated in this initiative
+          from <strong>1.00 p.m. to 5.00 p.m.</strong>, beginning their journey from
+          <strong>Dehiwala Railway Station</strong>. Before starting, the volunteers were briefed on
+          feeding routes, safety measures and the best approach to ensure both effective service and
+          responsible conduct throughout the activity.
+        </p>
+
+        <p>
+          Volunteers visited selected locations known for a high presence of street animals and distributed
+          food and clean water with care and consistency. In addition to helping the animals directly,
+          they also ensured that each feeding location was left clean and free from waste. This reflected
+          the project’s commitment not only to animal welfare, but also to environmental responsibility
+          and public convenience.
+        </p>
+
+        <div class="quote">
+          “Compassion-led service has the power to transform communities. By caring for the most vulnerable,
+          we create a society that is healthier, kinder and more responsible.”
+        </div>
+
+        <h2>Impact on the Community</h2>
+        <p>
+          The project directly benefited <strong>over 45 street animals</strong>, helping reduce the immediate
+          risks associated with hunger and dehydration. However, the impact extended beyond that number.
+          Pawsitive Impact also encouraged members of the public to reflect on how everyday actions can help
+          build a more caring and balanced urban environment.
+        </p>
+
+        <p>
+          Local community engagement played an important role in strengthening this message. Conversations
+          with residents helped raise awareness that caring for animals is not just the duty of a few people,
+          but a collective social responsibility. Humane treatment of animals contributes to cleaner public
+          spaces, healthier neighborhoods and stronger social consciousness.
+        </p>
+
+        <p>
+          By combining practical service with awareness building, this initiative aligned with important
+          humanitarian and development priorities. It reflected values connected to
+          <strong>Disease Prevention and Treatment</strong>, <strong>Supporting the Environment</strong>,
+          and <strong>Community Economic Development</strong>. It also contributed toward broader goals
+          related to <strong>good health and wellbeing</strong>, <strong>sustainable cities and communities</strong>
+          and <strong>life on land</strong>.
+        </p>
+
+        <h2>Conclusion</h2>
+        <p>
+          Overall, <strong>Pawsitive Impact</strong> stood as a strong example of how a focused service
+          project can create immediate relief while also inspiring long-term positive change. Through food,
+          water, awareness and responsible action, the Rotaract Club of ICBT demonstrated that compassion
+          is not just an emotion, but a force that can strengthen community wellbeing and encourage more
+          ethical coexistence.
+        </p>
+
+        <p>
+          This initiative reminded everyone involved that true service goes beyond temporary support. It
+          plants values, builds awareness and inspires responsibility. Pawsitive Impact was more than a
+          project title—it was a reflection of the difference that young leaders can make when they act
+          with empathy, purpose, and commitment.
+        </p>
+      </div>
+
+      <aside class="sidebar">
+        <h3>Project Snapshot</h3>
+
+        <div class="info-card">
+          <strong>Organized By</strong>
+          Rotaract Club of ICBT
+        </div>
+
+        <div class="info-card">
+          <strong>Date</strong>
+          9th November 2025
+        </div>
+
+        <div class="info-card">
+          <strong>Location</strong>
+          Dehiwala
+        </div>
+
+        <div class="info-card">
+          <strong>Starting Point</strong>
+          Dehiwala Railway Station
+        </div>
+
+        <div class="info-card">
+          <strong>Time</strong>
+          1.00 p.m. – 5.00 p.m.
+        </div>
+
+        <div class="info-card">
+          <strong>Focus Areas</strong>
+          Animal welfare, community awareness, public hygiene, responsible coexistence
+        </div>
+
+        <div class="stats">
+          <div class="stat-box">
+            <span>7</span>
+            Rotaractors
+          </div>
+          <div class="stat-box">
+            <span>45+</span>
+            Animals Helped
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="footer-banner">
+      <h2>Creating a Kinder Community, One Paw at a Time</h2>
+      <p>
+        Pawsitive Impact reflects the power of youth-led service in building compassion, awareness
+        and sustainable community values.
+      </p>
+      <a href="#" class="btn"> Project Gallery</a>
+    <div class="project-gallery" style="display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap;">
+        <img src="assets\community\commi4.jfif" alt="Volunteers feeding a dog" style="width:30%;max-width:220px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.2);">
+        <img src="assets\community\commi4.jfif" alt="Volunteers feeding a dog" style="width:30%;max-width:220px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.2);">
+         <img src="assets\community\commi4.jfif" alt="Volunteers feeding a dog" style="width:30%;max-width:220px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.2);">
+          <img src="assets\community\commi4.jfif" alt="Volunteers feeding a dog" style="width:30%;max-width:220px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.2);">
+    </div>
+    
+    </section>
+
+  </div>
+</body>
+</html>
