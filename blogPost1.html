@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>International Youth Day - Rotaract Club of ICBT</title>
+  <link rel="icon" type="image/png" href="assets\icon.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fff7fb, #f4f8ff, #fffdf3);
+      color: #1f2937;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 95vh;
+      background:
+        linear-gradient(rgba(128, 0, 75, 0.68), rgba(20, 34, 73, 0.58)),
+        url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      z-index: 0;
+    }
+
+    .hero::before {
+      width: 280px;
+      height: 280px;
+      top: -70px;
+      right: -70px;
+    }
+
+    .hero::after {
+      width: 220px;
+      height: 220px;
+      bottom: -50px;
+      left: -50px;
+    }
+
+    .hero-content {
+      max-width: 1000px;
+      text-align: center;
+      color: white;
+      z-index: 1;
+      position: relative;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ffd54f, #ffb300);
+      color: #5d4037;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .hero h1 {
+      font-size: 3.4rem;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      text-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 0 auto 28px;
+      font-size: 1.1rem;
+      color: #f8f9ff;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #ff4fa2, #ff6b6b);
+      color: white;
+      box-shadow: 0 10px 24px rgba(255, 79, 162, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.22);
+      transform: translateY(-3px);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .stats-wrapper {
+      margin-top: -70px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 24px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 14px 35px rgba(28, 35, 90, 0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+      color: #c2185b;
+      margin-bottom: 6px;
+    }
+
+    .stat-card p {
+      color: #4b5563;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .content-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 28px;
+      padding: 35px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+    }
+
+    .content-card h2 {
+      font-size: 2rem;
+      color: #c2185b;
+      margin-bottom: 18px;
+    }
+
+    .content-card h3 {
+      font-size: 1.35rem;
+      color: #7b1fa2;
+      margin: 26px 0 12px;
+    }
+
+    .content-card p {
+      margin-bottom: 16px;
+      color: #374151;
+      text-align: justify;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #fff3cd, #ffe3f1);
+      border-left: 6px solid #ec407a;
+      padding: 20px;
+      border-radius: 18px;
+      margin: 22px 0;
+      color: #4a3d3d;
+    }
+
+    .quote-box {
+      background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+      border-radius: 20px;
+      padding: 24px;
+      margin: 24px 0;
+      font-style: italic;
+      color: #374151;
+      border-left: 6px solid #7e57c2;
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 20px;
+    }
+
+    .side-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+    }
+
+    .side-card h3 {
+      color: #c2185b;
+      margin-bottom: 16px;
+      font-size: 1.3rem;
+    }
+
+    .info-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #f1d5e5;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      display: block;
+      color: #6a1b9a;
+      margin-bottom: 4px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      background: linear-gradient(90deg, #fce4ec, #e8eaf6);
+      color: #6a1b9a;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .impact-section {
+      background: linear-gradient(135deg, #fff0f7, #f4f8ff);
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .impact-card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+      transition: 0.3s ease;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .impact-card .icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .impact-card h3 {
+      color: #c2185b;
+      margin-bottom: 10px;
+    }
+
+    .impact-card p {
+      color: #4b5563;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+      background: white;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 400px;
+      object-fit:fill;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .closing-banner {
+      background: linear-gradient(135deg, #c2185b, #7b1fa2, #3949ab);
+      color: white;
+      border-radius: 30px;
+      padding: 50px 30px;
+      text-align: center;
+      box-shadow: 0 18px 40px rgba(83, 30, 104, 0.22);
+    }
+
+    .closing-banner h2 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .closing-banner p {
+      max-width: 800px;
+      margin: auto;
+      color: #f7f4ff;
+      margin-bottom: 24px;
+    }
+
+    .footer {
+      margin-top: 70px;
+      background: #8e1458;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 992px) {
+      .stats,
+      .impact-grid,
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .stats,
+      .impact-grid,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .content-card,
+      .side-card {
+        padding: 24px 20px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <br>
+  <div style="margin-bottom: 20px;">
+      <a href="blog.html" class="btn" style="background: #a75983; color: white; margin-top: 0;">&larr; Return to Blog</a>
+    </div>
+  <header class="hero">
+    <div class="hero-content">
+      <!-- <span class="tag">Community Service </span> -->
+      <h1>International Youth Day: Celebrating Young Voices, Leadership and Community Impact</h1>
+      <p>
+        International Youth Day is more than a celebration. It is a powerful reminder that young people
+        are the energy behind innovation, social responsibility, leadership and meaningful change in every community.
+        Through action, compassion and collaboration, youth continue to shape a brighter future.
+      </p>
+      <div class="hero-buttons">
+        <a href="#article" class="btn btn-primary">Read Full Article</a>
+        <a href="#gallery" class="btn btn-secondary">View Highlights</a>
+      </div>
+    </div>
+  </header>
+<!-- 
+  <div class="container stats-wrapper">
+    <div class="stats">
+      <div class="stat-card">
+        <h3>100%</h3>
+        <p>Youth Energy</p>
+      </div>
+      <div class="stat-card">
+        <h3>1 Day</h3>
+        <p>Of Celebration</p>
+      </div>
+      <div class="stat-card">
+        <h3>Many</h3>
+        <p>Future Leaders</p>
+      </div>
+      <div class="stat-card">
+        <h3>Endless</h3>
+        <p>Possibilities</p>
+      </div>
+    </div>
+  </div> -->
+
+  <section id="article">
+    <div class="container two-column">
+      <div class="content-card">
+        <h2>About International Youth Day</h2>
+        <p>
+          International Youth Day is a special occasion dedicated to recognizing the role of young people in building
+          stronger societies, promoting innovation and contributing to social, cultural and economic development.
+          It is a day that highlights the talents, ideas and contributions of youth while encouraging communities
+          to invest in their growth, education, wellbeing and leadership.
+        </p>
+
+        <p>
+          Across the world, young people continue to lead movements, introduce creative solutions, support communities
+          and inspire others through courage and commitment. Their voices influence policy, their ideas improve systems
+          and their actions create hope. Celebrating this day provides an opportunity to appreciate their journey while
+          also reflecting on the importance of empowering them with opportunities and support.
+        </p>
+
+        <div class="highlight-box">
+          <strong>Why this day matters:</strong> Youth are not only the leaders of tomorrow. They are active changemakers today.
+          Their energy, creativity and resilience help communities grow stronger, more inclusive and more forward-thinking.
+        </div>
+
+        <h3>The Power of Youth in Modern Society</h3>
+        <p>
+          Today’s youth are growing up in a fast-changing world shaped by technology, globalization, environmental concerns
+          and social transformation. In the middle of these changes, young people continue to adapt, learn and contribute in
+          extraordinary ways. They build startups, create digital platforms, volunteer in communities, support charitable causes
+          and advocate for equality, sustainability and peace.
+        </p>
+
+        <p>
+          Their involvement in social service and leadership activities proves that age is never a barrier to impact.
+          When given encouragement and opportunities, youth bring fresh perspectives and bold ideas that often lead to practical
+          and inspiring solutions. Their ability to connect, collaborate and innovate makes them a vital force in shaping the future.
+        </p>
+
+        <div class="quote-box">
+          “Young people are the spark of change, the voice of progress and the heart of a better tomorrow.”
+        </div>
+
+        <h3>Leadership, Responsibility and Community Engagement</h3>
+        <p>
+          One of the most inspiring aspects of youth development is the willingness of young people to take responsibility
+          for the wellbeing of others. Through volunteering, organizing events, participating in clubs and supporting social
+          initiatives, youth gain more than experience. They build empathy, confidence, teamwork and communication skills.
+        </p>
+
+        <p>
+          Community engagement helps youth understand real-world challenges and motivates them to contribute actively.
+          Whether they are helping underprivileged groups, raising awareness about important causes or working on educational
+          and environmental projects, young people learn that leadership is rooted in service. This understanding creates
+          responsible citizens who value compassion, accountability and action.
+        </p>
+
+        <h3>Education as a Foundation for Empowerment</h3>
+        <p>
+          Education plays a central role in empowering youth. It equips them with knowledge, critical thinking, discipline
+          and the ability to adapt to changing environments. However, empowerment goes beyond textbooks. Youth also need
+          opportunities to apply what they learn in practical, creative and meaningful contexts.
+        </p>
+
+        <p>
+          Clubs, community projects, workshops, competitions and collaborative events offer young people platforms to grow.
+          They help students discover hidden talents, develop leadership qualities and build confidence in their own abilities.
+          International Youth Day reminds us that creating supportive environments for learning and growth is essential for
+          developing future-ready individuals.
+        </p>
+
+        <h3>Creativity, Innovation and the Future</h3>
+        <p>
+          Youth are naturally connected to creativity and innovation. They are often the first to adopt new technologies,
+          experiment with fresh ideas and challenge traditional ways of thinking. This makes them essential contributors in
+          fields such as science, technology, media, entrepreneurship, design and social development.
+        </p>
+
+        <p>
+          When youth are encouraged to innovate, they bring solutions that are dynamic, inclusive and forward-looking.
+          From digital campaigns to social enterprises, their work often reflects both intelligence and passion. A society
+          that invests in youth creativity is investing in long-term progress and sustainable development.
+        </p>
+
+        <h3>Challenges Faced by Youth</h3>
+        <p>
+          While youth hold immense potential, they also face important challenges. Academic pressure, unemployment, limited access
+          to resources, mental stress and social inequality can affect their ability to thrive. Some young people also struggle to
+          find platforms where their voices are heard and valued. Recognizing these realities is an important part of celebrating
+          International Youth Day meaningfully.
+        </p>
+
+        <p>
+          True celebration involves not only appreciation but also action. Communities, institutions and leaders should work together
+          to create safe, inclusive and empowering spaces where youth feel supported. Mentorship, encouragement, equal opportunity
+          and access to development programs can make a lasting difference in their lives.
+        </p>
+
+        <h3>The Role of Youth Organizations</h3>
+        <p>
+          Youth organizations play a powerful role in bringing people together and turning enthusiasm into action. They provide space
+          for friendship, collaboration, leadership and service. Through organized initiatives, young members learn how to plan,
+          communicate, solve problems and contribute to causes bigger than themselves.
+        </p>
+
+        <p>
+          Such organizations also create a sense of belonging and purpose. They remind young people that their talents matter and that
+          working as a team can multiply impact. International Youth Day is a perfect moment to celebrate the efforts of youth clubs,
+          student organizations and service groups that continuously inspire positive change.
+        </p>
+
+        <h3>Conclusion</h3>
+        <p>
+          International Youth Day is a celebration of hope, courage, talent and transformation. It recognizes that young people are
+          not waiting for the future to arrive. They are already building it through their ideas, service, leadership and determination.
+          By supporting youth development, communities invest in progress, harmony, and innovation.
+        </p>
+
+        <p>
+          This day encourages everyone to listen to youth, believe in their potential and create opportunities that allow them to shine.
+          When youth are empowered, communities become stronger. When their voices are heard, society moves forward. And when their
+          leadership is nurtured, the future becomes brighter for all.
+        </p>
+      </div>
+
+      <div class="sidebar">
+        <div class="side-card">
+          <h3>Article Snapshot</h3>
+          <div class="info-item">
+            <strong>Title</strong>
+            International Youth Day
+          </div>
+          <div class="info-item">
+            <strong>Category</strong>
+            Community Service / Youth Leadership
+          </div>
+          <div class="info-item">
+            <strong>Theme</strong>
+            Empowering youth for a better future
+          </div>
+          <div class="info-item">
+            <strong>Focus</strong>
+            Leadership, innovation, service and empowerment
+          </div>
+        </div>
+
+        <!-- <div class="side-card">
+          <h3>Key Themes</h3>
+          <div class="pill-list">
+            <span class="pill">Youth Empowerment</span>
+            <span class="pill">Leadership</span>
+            <span class="pill">Innovation</span>
+            <span class="pill">Education</span>
+            <span class="pill">Community Service</span>
+            <span class="pill">Social Impact</span>
+            <span class="pill">Future Leaders</span>
+            <span class="pill">Collaboration</span>
+          </div>
+        </div> -->
+
+        <div class="side-card">
+          <h3>Why It Inspires</h3>
+          <p>
+            This article reflects the energy and dedication of young people who continue to create change
+            through compassion, teamwork, creativity and courage. It is a reminder that every idea,
+            every voice and every act of service matters.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact-section">
+    <div class="container">
+      <div class="content-card" style="background: transparent; box-shadow: none; padding: 0;">
+        <h2 style="text-align:center; margin-bottom: 14px;">The Lasting Impact of Youth</h2>
+        <p style="text-align:center; max-width: 850px; margin: 0 auto 36px; color:#4b5563;">
+          Young people shape communities in many ways. Their contributions go beyond events and celebrations.
+          They create momentum, uplift others and build pathways toward a more inclusive and progressive society.
+        </p>
+      </div>
+
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="icon">🌍</div>
+          <h3>Community Development</h3>
+          <p>
+            Youth engagement strengthens communities through volunteering, awareness campaigns, outreach activities
+            and practical initiatives that address real social needs.
+          </p>
+        </div>
+
+        <div class="impact-card">
+          <div class="icon">💡</div>
+          <h3>Creative Innovation</h3>
+          <p>
+            Fresh ideas and digital thinking allow young people to introduce smarter, more modern and more impactful
+            ways of solving problems and connecting people.
+          </p>
+        </div>
+
+        <div class="impact-card">
+          <div class="icon">🤝</div>
+          <h3>Leadership Through Service</h3>
+          <p>
+            By helping others and working as teams, youth develop responsibility, empathy, confidence and the ability
+            to lead with purpose and integrity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="content-card" style="margin-bottom: 30px;">
+        <h2 style="text-align:center;">Article Highlights Gallery</h2>
+        <p style="text-align:center;">
+            A glimpse into the energy, creativity and impact of youth as they lead, serve and innovate in their communities.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="assets\gallery\WhatsApp Image 2025-08-16 at 11.26.58_369604f3.jpg" alt="Youth teamwork">
+        </div>
+        <div class="gallery-item">
+          <img src="assets\up_projects\rfd.jpg" alt="Youth leadership">
+        </div>
+        <div class="gallery-item">
+          <img src="assets\hero2.jpg" alt="Youth collaboration">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="closing-banner">
+        <h2>Empower Youth, Empower the Future</h2>
+        <p>
+          International Youth Day is a celebration of potential, purpose and progress. Let us continue
+          to encourage young minds, support young leaders and create spaces where youth can dream boldly,
+          act confidently and serve meaningfully.
+        </p>
+        
+      </div>
+    </div>
+  </section>
+</body>
+</html>
