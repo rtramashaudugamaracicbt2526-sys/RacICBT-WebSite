@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friendship Day | Rotaract Club of ICBT</title>
+  <link rel="icon" type="image/png" href="assets\icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#c2185b;
+      --secondary:#7b1fa2;
+      --accent:#ff6f61;
+      --gold:#ffca28;
+      --dark:#181c2a;
+      --text:#334155;
+      --muted:#64748b;
+      --white:#ffffff;
+      --soft-bg:#f8f5ff;
+      --card-border:rgba(255,255,255,0.35);
+      --shadow:0 20px 60px rgba(31, 38, 135, 0.14);
+      --radius:28px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:
+        radial-gradient(circle at top left, rgba(255,111,97,0.10), transparent 25%),
+        radial-gradient(circle at top right, rgba(123,31,162,0.12), transparent 30%),
+        linear-gradient(180deg, #fff8fc 0%, #f6f8ff 45%, #fffdf8 100%);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(1180px, 92%);
+      margin:auto;
+    }
+
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+        linear-gradient(120deg, rgba(194,24,91,0.78), rgba(123,31,162,0.70), rgba(57,73,171,0.62)),
+        url("https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 18%),
+        radial-gradient(circle at 80% 25%, rgba(255,255,255,0.14), transparent 14%),
+        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.10), transparent 16%);
+      pointer-events:none;
+    }
+
+    .floating-shape{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(8px);
+      opacity:0.35;
+      animation:float 7s ease-in-out infinite;
+    }
+
+    .shape1{
+      width:180px;
+      height:180px;
+      background:#ffd54f;
+      top:90px;
+      left:-50px;
+    }
+
+    .shape2{
+      width:140px;
+      height:140px;
+      background:#ff80ab;
+      bottom:120px;
+      right:-30px;
+      animation-delay:1.2s;
+    }
+
+    .shape3{
+      width:90px;
+      height:90px;
+      background:#b388ff;
+      top:200px;
+      right:18%;
+      animation-delay:2s;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0px);}
+      50%{transform:translateY(-18px);}
+    }
+
+    .hero-grid{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:40px;
+      align-items:center;
+      padding:80px 0;
+    }
+
+    .hero-text .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 18px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.18);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.26);
+      backdrop-filter:blur(14px);
+      font-size:0.92rem;
+      font-weight:600;
+      margin-bottom:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-text h1{
+      color:#fff;
+      font-size:clamp(2.4rem, 5vw, 4.8rem);
+      line-height:1.06;
+      font-weight:800;
+      margin-bottom:20px;
+      letter-spacing:-1px;
+    }
+
+    .hero-text p{
+      color:rgba(255,255,255,0.92);
+      font-size:1.06rem;
+      max-width:700px;
+      margin-bottom:32px;
+      line-height:1.9;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 28px;
+      border-radius:999px;
+      font-weight:700;
+      transition:0.32s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(90deg, #ffca28, #ff8a65);
+      color:#4a2b00;
+      box-shadow:0 16px 35px rgba(255,138,101,0.35);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-4px) scale(1.02);
+    }
+
+    .btn-glass{
+      background:rgba(255,255,255,0.15);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.28);
+      backdrop-filter:blur(12px);
+    }
+
+    .btn-glass:hover{
+      background:rgba(255,255,255,0.22);
+      transform:translateY(-4px);
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,0.17);
+      border:1px solid rgba(255,255,255,0.22);
+      backdrop-filter:blur(16px);
+      border-radius:32px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      color:#fff;
+    }
+
+    .hero-card img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+      border-radius:24px;
+      margin-bottom:18px;
+      box-shadow:0 14px 35px rgba(0,0,0,0.18);
+    }
+
+    .hero-card h3{
+      font-size:1.4rem;
+      margin-bottom:10px;
+    }
+
+    .hero-card p{
+      color:rgba(255,255,255,0.88);
+      font-size:0.96rem;
+      line-height:1.8;
+    }
+
+    .stats-wrap{
+      margin-top:-70px;
+      position:relative;
+      z-index:4;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,0.74);
+      border:1px solid rgba(255,255,255,0.42);
+      backdrop-filter:blur(18px);
+      border-radius:26px;
+      padding:28px 20px;
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .stat h3{
+      font-size:2.1rem;
+      color:var(--primary);
+      margin-bottom:6px;
+      font-weight:800;
+    }
+
+    .stat p{
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title span{
+      display:inline-block;
+      background:linear-gradient(90deg, #ffe082, #f8bbd0);
+      color:#7b1fa2;
+      padding:8px 16px;
+      border-radius:999px;
+      font-size:0.9rem;
+      font-weight:700;
+      margin-bottom:16px;
+    }
+
+    .section-title h2{
+      font-size:clamp(2rem, 4vw, 3rem);
+      color:var(--dark);
+      margin-bottom:14px;
+      line-height:1.15;
+    }
+
+    .section-title p{
+      max-width:780px;
+      margin:auto;
+      color:var(--muted);
+      line-height:1.9;
+    }
+
+    .article-layout{
+      display:grid;
+      grid-template-columns:1.55fr 0.85fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .glass-card{
+      background:rgba(255,255,255,0.78);
+      border:1px solid rgba(255,255,255,0.42);
+      backdrop-filter:blur(18px);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .article-main{
+      padding:38px;
+    }
+
+    .article-main h3{
+      font-size:1.45rem;
+      color:var(--secondary);
+      margin:26px 0 12px;
+    }
+
+    .article-main p{
+      color:var(--text);
+      margin-bottom:16px;
+      line-height:1.95;
+      text-align:justify;
+    }
+
+    .fancy-highlight{
+      background:linear-gradient(135deg, rgba(255,224,130,0.55), rgba(248,187,208,0.48));
+      border:1px solid rgba(255,255,255,0.4);
+      padding:22px;
+      border-radius:22px;
+      margin:24px 0;
+      color:#5b4252;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.4);
+    }
+
+    .quote{
+      background:linear-gradient(135deg, rgba(232,245,233,0.78), rgba(237,231,246,0.80));
+      border-left:6px solid var(--secondary);
+      border-radius:22px;
+      padding:24px;
+      margin:26px 0;
+      font-style:italic;
+      color:#435066;
+      font-size:1.02rem;
+    }
+
+    .sidebar{
+      display:grid;
+      gap:22px;
+    }
+
+    .side-box{
+      padding:26px;
+    }
+
+    .side-box h4{
+      color:var(--primary);
+      margin-bottom:16px;
+      font-size:1.2rem;
+    }
+
+    .side-info{
+      display:grid;
+      gap:14px;
+    }
+
+    .side-info div{
+      padding-bottom:14px;
+      border-bottom:1px solid rgba(203, 213, 225, 0.5);
+    }
+
+    .side-info div:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .side-info strong{
+      display:block;
+      color:var(--secondary);
+      margin-bottom:4px;
+    }
+
+    .tags{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .tags span{
+      padding:10px 14px;
+      border-radius:999px;
+      background:linear-gradient(90deg, #fce4ec, #ede7f6);
+      color:var(--secondary);
+      font-size:0.9rem;
+      font-weight:600;
+    }
+
+    .impact-area{
+      background:linear-gradient(180deg, rgba(255,241,246,0.70), rgba(244,248,255,0.82));
+    }
+
+    .impact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .impact-card{
+      padding:30px;
+      transition:0.3s ease;
+    }
+
+    .impact-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .impact-icon{
+      width:62px;
+      height:62px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      font-size:1.7rem;
+      margin-bottom:16px;
+      background:linear-gradient(135deg, #ffd54f, #f48fb1);
+    }
+
+    .impact-card h3{
+      color:var(--primary);
+      margin-bottom:10px;
+      font-size:1.2rem;
+    }
+
+    .impact-card p{
+      color:var(--muted);
+      line-height:1.85;
+    }
+
+    .timeline{
+      display:grid;
+      gap:18px;
+      margin-top:34px;
+    }
+
+    .timeline-item{
+      display:grid;
+      grid-template-columns:70px 1fr;
+      gap:18px;
+      align-items:start;
+      padding:22px;
+    }
+
+    .timeline-badge{
+      width:60px;
+      height:60px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, #d81b60, #7b1fa2);
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 12px 26px rgba(123,31,162,0.22);
+    }
+
+    .timeline-item h4{
+      color:var(--secondary);
+      margin-bottom:6px;
+      font-size:1.1rem;
+    }
+
+    .timeline-item p{
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .gallery-card{
+      overflow:hidden;
+      border-radius:28px;
+      position:relative;
+      box-shadow:var(--shadow);
+    }
+
+    .gallery-card img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+      display:block;
+      transition:transform 0.45s ease;
+    }
+
+    .gallery-card:hover img{
+      transform:scale(1.08);
+    }
+
+    .gallery-overlay{
+      position:absolute;
+      inset:auto 0 0 0;
+      padding:20px;
+      color:#fff;
+      background:linear-gradient(to top, rgba(24,28,42,0.78), transparent);
+      font-weight:600;
+      letter-spacing:0.2px;
+    }
+
+    .cta{
+      padding-bottom:110px;
+    }
+
+    .cta-box{
+      padding:54px 30px;
+      text-align:center;
+      background:linear-gradient(135deg, #d81b60, #8e24aa, #3949ab);
+      color:#fff;
+      border-radius:34px;
+      box-shadow:0 24px 60px rgba(80, 37, 122, 0.25);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      background:rgba(255,255,255,0.08);
+      border-radius:50%;
+      top:-80px;
+      right:-60px;
+    }
+
+    .cta-box::after{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:rgba(255,255,255,0.06);
+      border-radius:50%;
+      bottom:-70px;
+      left:-50px;
+    }
+
+    .cta-box h2{
+      position:relative;
+      z-index:1;
+      font-size:clamp(2rem,4vw,3rem);
+      margin-bottom:14px;
+    }
+
+    .cta-box p{
+      position:relative;
+      z-index:1;
+      max-width:760px;
+      margin:0 auto 24px;
+      color:rgba(255,255,255,0.92);
+      line-height:1.9;
+    }
+
+    .footer{
+      background:#88154f;
+      color:#fff;
+      text-align:center;
+      padding:22px;
+      font-size:0.95rem;
+    }
+
+    @media (max-width: 1024px){
+      .hero-grid,
+      .article-layout{
+        grid-template-columns:1fr;
+      }
+
+      .stats,
+      .impact-grid,
+      .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .hero-card img{
+        height:340px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .stats,
+      .impact-grid,
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+
+      .article-main,
+      .side-box{
+        padding:24px 20px;
+      }
+
+      .hero{
+        min-height:auto;
+      }
+
+      .hero-grid{
+        padding:70px 0 60px;
+      }
+
+      .timeline-item{
+        grid-template-columns:1fr;
+      }
+
+      .timeline-badge{
+        width:54px;
+        height:54px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+    <div class="floating-shape shape3"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div style="margin-bottom: 20px;">
+      <a href="blog.html" class="btn" style="background: #a75983; color: white; margin-top: 0;">&larr; Return to Blog</a>
+    </div>
+        <h1>Friendship Day in a More Stylish, Vibrant and Memorable Way</h1>
+        <p>
+          Friendship Day is a celebration of connection, trust, laughter, belonging and the beautiful
+          memories created when people grow together. In Rotaract, friendship is not just a feeling.
+          It is the foundation of teamwork, service, confidence and a truly unforgettable club journey.
+        </p>
+        <div class="hero-actions">
+          <a href="#article" class="btn btn-primary">Read the Story</a>
+          <a href="#gallery" class="btn btn-glass">Explore Highlights</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="assets\gallery\IMG-20250730-WA0006.jpg" alt="Friendship Day">
+        <h3>Celebrating bonds that make every moment special</h3>
+        <p>
+          From shared laughter and teamwork to heartfelt support and lifelong memories,
+          Friendship Day reminds us that the best journeys are always the ones we take together.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <div class="container stats-wrap">
+    <div class="stats">
+      <div class="stat">
+        <h3>1</h3>
+        <p>Joyful Celebration</p>
+      </div>
+      <div class="stat">
+        <h3>∞</h3>
+        <p>Beautiful Memories</p>
+      </div>
+      <div class="stat">
+        <h3>100%</h3>
+        <p>Team Spirit</p>
+      </div>
+      <div class="stat">
+        <h3>Stronger</h3>
+        <p>Together Always</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="article">
+    <div class="container">
+      <div class="section-title">
+        <span>About the Celebration</span>
+        <h2>Friendship That Builds Confidence, Belonging and Lasting Memories</h2>
+        <p>
+          Friendship is one of the most meaningful parts of youth life and club culture. It adds warmth to
+          everyday experiences, creates emotional strength and turns a group of people into a supportive family.
+        </p>
+      </div>
+
+      <div class="article-layout">
+        <div class="glass-card article-main">
+          <p>
+            Friendship Day is a heartfelt celebration of the people who make life brighter through kindness,
+            trust, support and shared experiences. It is a day to appreciate the bonds that bring comfort
+            during difficult moments and happiness during joyful ones. In every friendship, there is a story
+            built with laughter, understanding, encouragement and countless memories that stay special over time.
+          </p>
+
+          <p>
+            Within Rotaract and youth communities, friendship carries even greater meaning. Members come together
+            through projects, meetings, events, planning sessions and service initiatives. Over time, these shared
+            moments build genuine connections that go beyond teamwork. They create a strong sense of unity and make
+            every challenge easier to face together.
+          </p>
+
+          <div class="fancy-highlight">
+            <strong>Friendship is powerful because it creates belonging.</strong> It gives people the confidence to
+            express themselves, the comfort to be understood, and the support to continue growing even when life feels challenging.
+          </div>
+
+          <h3>Why Friendship Matters So Much</h3>
+          <p>
+            Friendship improves emotional wellbeing in ways that are both simple and profound. A true friend can
+            lift your mood, motivate you when you feel tired and stand beside you without needing a reason.
+            Young people especially benefit from friendships that encourage positivity, healthy communication,
+            confidence and personal growth. These bonds become safe spaces where ideas can be shared freely
+            and individuality can be celebrated.
+          </p>
+
+          <p>
+            In club life, friendship makes collaboration more natural and enjoyable. It creates trust between members,
+            improves communication and helps teams work smoothly. A club filled with supportive friendships becomes
+            more energetic, more inclusive and more capable of achieving meaningful goals.
+          </p>
+
+          <div class="quote">
+            “Friendship is the quiet strength behind every shared success, every unforgettable memory and every moment that feels like home.”
+          </div>
+
+          <h3>Friendship in Rotaract Culture</h3>
+          <p>
+            Rotaract is not only about service and leadership. It is also about the people who walk the journey together.
+            Friendships formed within the club often begin during small conversations, event preparations and collaborative tasks,
+            but they quickly grow into meaningful bonds. Members become sources of encouragement, laughter, inspiration and emotional support.
+          </p>
+
+          <p>
+            These connections shape the culture of the club. They make meetings more lively, events more enjoyable, and responsibilities
+            more manageable. When members feel connected to one another, they feel more comfortable participating, sharing ideas and
+            contributing with confidence. This strengthens both individual growth and club unity.
+          </p>
+
+          <h3>Memories That Last</h3>
+          <p>
+            One of the most beautiful things about friendship is the way it transforms ordinary moments into unforgettable memories.
+            A group photo, a random laugh, a kind message, a successful event, a stressful day made easier by a friend — all these
+            become part of a meaningful story. Friendship Day is the perfect moment to reflect on how much these small moments matter.
+          </p>
+
+          <p>
+            Over time, the memories created through friendship become emotional treasures. They remind us that life is not only about
+            goals and responsibilities, but also about the people who make the journey joyful and worthwhile.
+          </p>
+
+          <h3>Friendship and Personal Growth</h3>
+          <p>
+            Good friendships help people become better versions of themselves. They teach patience, understanding, empathy, listening
+            and respect. They also encourage self-confidence and emotional maturity. When surrounded by friends who genuinely care,
+            people feel safer taking risks, learning new things and expressing their creativity.
+          </p>
+
+          <p>
+            In youth communities, these friendships often inspire leadership growth. Supportive friends motivate one another, celebrate
+            each other’s strengths and provide encouragement during difficult tasks. This creates an environment where success feels shared
+            and progress feels meaningful.
+          </p>
+
+          <h3>Celebrating Friendship Day Meaningfully</h3>
+          <p>
+            Friendship Day can be celebrated in simple yet powerful ways. Sharing appreciation messages, posting memories, organizing fun
+            gatherings, creating friendship boards, exchanging kind notes or simply thanking someone for always being there can make the
+            day truly meaningful. What matters most is sincerity.
+          </p>
+
+          <p>
+            In a club setting, Friendship Day is also a chance to celebrate togetherness and remind members that their presence matters.
+            It is a day to recognize the friendships that create the heart of the organization and the positive energy that those relationships bring.
+          </p>
+
+          <h3>Conclusion</h3>
+          <p>
+            Friendship Day is a celebration of joy, connection, trust and togetherness. It honors the people who stand beside us through
+            challenges and celebrations alike. In Rotaract, friendship becomes one of the strongest forces behind teamwork, service and shared success.
+          </p>
+
+          <p>
+            By celebrating Friendship Day, we celebrate the emotional bonds that make every experience richer and every memory more beautiful.
+            These are the relationships that make club life feel like family and transform ordinary days into moments we will always remember.
+          </p>
+        </div>
+
+        <div class="sidebar">
+          <div class="glass-card side-box">
+            <h4>Article Snapshot</h4>
+            <div class="side-info">
+              <div>
+                <strong>Title</strong>
+                Friendship Day
+              </div>
+              <div>
+                <strong>Category</strong>
+                Club Life / Member Bonding
+              </div>
+              <div>
+                <strong>Theme</strong>
+                Connection, unity and belonging
+              </div>
+              <div>
+                <strong>Focus</strong>
+                Friendship, support, teamwork and memories
+              </div>
+            </div>
+          </div>
+
+       
+
+          <div class="glass-card side-box">
+            <h4>Why It Feels Special</h4>
+            <p>
+              Friendship creates a stronger, warmer and more confident club environment. It turns
+              events into memories and teams into families.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact-area">
+    <div class="container">
+      <div class="section-title">
+        <span>What Friendship Creates</span>
+        <h2>The Lasting Impact of Genuine Connections</h2>
+        <p>
+          Friendship shapes club culture, strengthens collaboration and builds emotional wellbeing.
+          It is one of the most valuable parts of every youth journey.
+        </p>
+      </div>
+
+      <div class="impact-grid">
+        <div class="glass-card impact-card">
+          <div class="impact-icon">💖</div>
+          <h3>Emotional Strength</h3>
+          <p>
+            Friends bring comfort, motivation and understanding. Their support makes hard days lighter
+            and good days even more meaningful.
+          </p>
+        </div>
+
+        <div class="glass-card impact-card">
+          <div class="impact-icon">🤝</div>
+          <h3>Better Teamwork</h3>
+          <p>
+            Strong friendships improve trust and communication, helping members work together more smoothly
+            and confidently in every project.
+          </p>
+        </div>
+
+        <div class="glass-card impact-card">
+          <div class="impact-icon">📸</div>
+          <h3>Unforgettable Memories</h3>
+          <p>
+            Shared laughs, celebrations and meaningful moments become treasured memories that remain long
+            after the event is over.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="glass-card timeline-item">
+          <div class="timeline-badge">01</div>
+          <div>
+            <h4>Starting with Small Conversations</h4>
+            <p>
+              Friendship often begins with simple interactions, a shared smile or a moment of teamwork that opens the door to connection.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card timeline-item">
+          <div class="timeline-badge">02</div>
+          <div>
+            <h4>Growing Through Shared Experiences</h4>
+            <p>
+              Events, projects, meetings and celebrations build stronger bonds and create emotional closeness over time.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card timeline-item">
+          <div class="timeline-badge">03</div>
+          <div>
+            <h4>Becoming Lifelong Memories</h4>
+            <p>
+              As trust grows, friendship becomes one of the most valuable and lasting parts of the journey.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Celebrate the People Who Make Life Beautiful</h2>
+        <p>
+          Friendship Day reminds us that meaningful bonds are among life’s greatest gifts. They inspire us,
+          support us and make every journey brighter, stronger and more memorable.
+        </p>
+       
+      </div>
+    </div>
+  </section>
+
+
+</body>
+</html>
